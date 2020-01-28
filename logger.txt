@@ -1,0 +1,90 @@
+<<< start gen mid >>>
+
+global declare!!
+no deal: INT_DECLARE 
+no deal: PARAMS 
+no deal: COMPONENT 
+no deal: INT_DECLARE 
+no deal: PARAMS NULL
+no deal: COMPONENT 
+p is global
+no deal: ID test
+no deal: STR hello
+no deal: STR space
+no deal: STR world
+no deal: STR endl
+p is global
+<<<start output midCode >>>
+	[add INT_DECLARE]:       p
+	[add argPARAM_DECLARE]:  a
+	[add argPARAM_DECLARE]:  b
+	[add INT_DECLARE]:       ans
+	[Gen_E ID]:              a
+	[Gen_E ID]:              b
+	[OPTION_ADD]:            dest_name: __t1
+	[Gen_S ASSIGN]:          left: ans  right: __t1
+	[Gen_E ID]:              ans
+	[Gen_E NUM]:             1
+	[OPTION_ADD]:            dest_name: __t2
+	[Gen_E ID]:              a
+	[Gen_E NUM]:             1
+	[OPTION_ADD]:            dest_name: __t3
+	[add INT_DECLARE]:       a
+	[Gen_E NUM]:             3
+	[Gen_S ASSIGN]:          left: a  right: 3
+	[Gen_E NUM]:             1
+	[Gen_S ASSIGN]:          left: p  right: 1
+	[Gen_E ID]:              a
+	[Gen_E ID]:              a
+	[CALLARG]:               tmp_name: __t3
+	[Gen_E ID]:              p
+	[CALLARG]:               tmp_name: __t4
+	[ARG]:                   value: __t4
+	[ARG]:                   value: __t3
+	[Gen_S ASSIGN]:          left: a  right: __t5
+	[Gen_S WHILE]:           end
+	[Gen_E NUM]:             1
+	[Gen_E NUM]:             2020
+	[Gen_S ASSIGN]:          left: p  right: 2020
+	[Gen_E ID]:              p
+	[Gen_E NUM]:             0
+
+-------------------------------------------------
+FUNCTION: VAR_DECLARE	(stackSize: 0)
+	                    INT                 	[p, ID, 0, 1]                 NONE                          
+FUNCTION: test	(stackSize: 4)
+	__t1                +                   	[a, ARG, 0, 0]                [b, ARG, 1, 0]                
+	ans                 =                   	[__t1, TMP, 1, 0]             NONE                          
+	__t2                -                   	[ans, ID, 0, 0]               [1, NUM, 0, 0]                
+	                    PRINT               	[__t2, TMP, 2, 0]             NONE                          
+	__t3                -                   	[a, ARG, 0, 0]                [1, NUM, 0, 0]                
+	                    return              	[__t3, TMP, 3, 0]             NONE                          
+FUNCTION: main	(stackSize: 9)
+	a                   =                   	[3, NUM, 0, 0]                NONE                          
+	p                   =                   	[1, NUM, 0, 0]                NONE                          
+	Label0:             LABEL               	NONE                          NONE                          
+	                    if                  	[a, ID, 0, 0]                 NONE                          
+	                    goto                	[Label1:, LABEL, 1, 0]        NONE                          
+	                    goto                	[Label2:, LABEL, 2, 0]        NONE                          
+	Label1:             LABEL               	NONE                          NONE                          
+	__t3                =                   	[a, ID, 0, 0]                 NONE                          
+	__t4                =                   	[p, ID, 0, 1]                 NONE                          
+	                    ARG                 	[__t4, TMP, 4, 0]             NONE                          
+	                    ARG                 	[__t3, TMP, 3, 0]             NONE                          
+	__t5                CALL                	[test, CALL, 0, 0]            [8, ARG_NUM, 0, 0]            
+	a                   =                   	[__t5, TMP, 5, 0]             NONE                          
+	                    goto                	[Label0:, TMP, 6, 0]          NONE                          
+	Label2:             LABEL               	NONE                          NONE                          
+	                    PRINT               	[4, STR, 0, 1]                NONE                          
+	                    PRINT               	[space, STR, 0, 1]            NONE                          
+	                    PRINT               	[5, STR, 0, 1]                NONE                          
+	                    PRINT               	[endl, STR, 0, 1]             NONE                          
+	                    if                  	[1, NUM, 0, 0]                NONE                          
+	                    goto                	[Label3:, LABEL, 7, 0]        NONE                          
+	                    goto                	[Label4:, LABEL, 8, 0]        NONE                          
+	Label3:             LABEL               	NONE                          NONE                          
+	p                   =                   	[2020, NUM, 0, 0]             NONE                          
+	                    PRINT               	[p, ID, 0, 1]                 NONE                          
+	Label4:             LABEL               	NONE                          NONE                          
+	                    return              	[0, NUM, 0, 0]                NONE                          
+<<< start gen asm >>>
