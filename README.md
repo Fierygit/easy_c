@@ -3,6 +3,8 @@
 
 这是一个基于x86平台的简易的c-----------编译器，为什么这么多减呢？  我减了很多语法 ~_^ 。
 
+语法定义在： https://blog.csdn.net/fierygit/article/details/104102909
+
 用法：
 
 ![image](https://raw.githubusercontent.com/Fierygit/picbed/master/20200128214503.png)
