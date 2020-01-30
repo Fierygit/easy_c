@@ -11,3 +11,10 @@
 
 
 gcc 使用的是  GNU AS 的连接， 我直接使用gcc 的连接， 当作于使用 GNU AS 的链接。
+
+
+example:
+
+![](https://raw.githubusercontent.com/Fierygit/picbed/master/20200130193901.png)
+
+![](https://raw.githubusercontent.com/Fierygit/picbed/master/1580218434(1).jpg)
